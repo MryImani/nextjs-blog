@@ -11,11 +11,11 @@ export default function PostItem(props) {
   const imagePath = `/images/posts/${post.slug}.jpg`;
   const linkPath = `/posts/${post.slug}`;
   return (
-    <li className="text-center rounded-lg shadow-xl py-6 px-3 flex flex-col justify-between">
+    <li className="text-center rounded-lg shadow-xl py-3 px-3 flex flex-col justify-between bg-white">
       <Link href={linkPath}>
 
           <div>
-            <Image className=" object-fill w-full h-64" src={imagePath} alt={post.title} width={300} height={200} />
+            <Image className=" object-fill w-full h-64 rounded" src={imagePath} alt={post.title} width={300} height={200} />
           </div>
           <div className="mt-8">
             <h3 className="text-base font-extrabold mb-2">{post.title}</h3>
