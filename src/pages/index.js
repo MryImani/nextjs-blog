@@ -199,7 +199,7 @@ export default function Home() {
   return (
     <Fragment>
       <Hero />
-      <FeaturedPosts posts={dummyData} />
+      <FeaturedPosts posts={dummyData}/>
     </Fragment>
   );
 }

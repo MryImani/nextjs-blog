@@ -4,7 +4,7 @@ import Logo from "./logo";
 export default function Navigation(){
     return (
       <header
-        className={` p-4 lg:px-36 lg:py-8 flex items-center justify-between fixed w-full z-10 `}
+        className={` p-4 lg:px-36 lg:py-8 flex items-center justify-between relative z-10 `}
       >
         <Link href="/">
           <Logo />
