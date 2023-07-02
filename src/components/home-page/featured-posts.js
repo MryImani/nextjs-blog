@@ -11,8 +11,8 @@ export default  function FeaturedPosts(props){
     }
     return (
       <section className="px-4 lg:px-36 lg:py-8 md:relative md:bottom-8">
-        <div className="flex justify-between items-center">
-          <h2 className="text-4xl font-medium text-slate-900 mb-12">
+        <div className="flex justify-between items-center mb-8 mx-2">
+          <h2 className="text-4xl font-medium text-slate-900 ">
             Featured Posts
           </h2>
           <button
