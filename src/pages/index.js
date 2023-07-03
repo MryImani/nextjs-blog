@@ -1,16 +1,16 @@
 import FeaturedPosts from "@/components/home-page/featured-posts";
 import Hero from "@/components/home-page/hero";
-import { Fragment, useEffect, useState } from "react";
-import dummyData from "../../store/dummy-data";
+import { Fragment} from "react";
+import {  getFeaturedPosts } from "../../store/dummy-data";
+
 
 
 export default function Home() {
-  const data =  dummyData;
-  
+  const posts =  getFeaturedPosts(); 
   return (
     <Fragment>
       <Hero />
-      <FeaturedPosts posts={data} />
+      <FeaturedPosts posts={posts} />
     </Fragment>
   );
 }

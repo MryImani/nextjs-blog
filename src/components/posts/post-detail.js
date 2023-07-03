@@ -23,11 +23,11 @@ export default function PostDetail(props) {
       </div>
 
       <div className="lg:col-span-6 py-3 px-3">
-        <h1 className="text-4xl font-extrabold mb-2">{post.title}</h1>
+        <h1 className="text-4xl font-extrabold mb-2 text-justify">{post.title}</h1>
         <time className=" italic text-gray-500 font-semibold">
           {formattedDate}
         </time>
-        <p className="mt-4 text-gray-400">{post.body}</p>
+        <p className="mt-4 text-gray-400 text-justify">{post.body}</p>
       </div>
     </div>
   );

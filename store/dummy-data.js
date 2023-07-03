@@ -1,4 +1,4 @@
-const dummyData = [
+const posts = [
   {
     slug: "Try-to-transmit-the-HTTP-card-maybe-it-will-override-the-multi-byte-hard-drive!-120863",
     title:
@@ -9,7 +9,7 @@ const dummyData = [
     tagList: ["voluptate", "rerum", "ducimus", "hic"],
     createdAt: "2022-12-09",
     updatedAt: "2022-12-09",
-    favorited: false,
+    isFeatured: true,
     favoritesCount: 1205,
     author: {
       username: "Anah Benešová",
@@ -28,7 +28,7 @@ const dummyData = [
     tagList: ["rerum", "maiores", "omnis", "quae"],
     createdAt: "2022-12-09",
     updatedAt: "2022-12-09",
-    favorited: false,
+    isFeatured: false,
     favoritesCount: 1494,
     author: {
       username: "Anah Benešová",
@@ -47,7 +47,7 @@ const dummyData = [
     tagList: ["possimus", "voluptatem", "cupiditate"],
     createdAt: "2022-12-09",
     updatedAt: "2022-12-09",
-    favorited: false,
+    isFeatured: true,
     favoritesCount: 357,
     author: {
       username: "Anah Benešová",
@@ -66,7 +66,7 @@ const dummyData = [
     tagList: ["dicta", "rerum", "omnis", "blanditiis"],
     createdAt: "2022-12-09",
     updatedAt: "2022-12-09",
-    favorited: false,
+    isFeatured: false,
     favoritesCount: 213,
     author: {
       username: "Anah Benešová",
@@ -85,7 +85,7 @@ const dummyData = [
     tagList: ["dolores", "aut", "consectetur", "ullam"],
     createdAt: "2022-12-09",
     updatedAt: "2022-12-09",
-    favorited: false,
+    isFeatured: false,
     favoritesCount: 221,
     author: {
       username: "Anah Benešová",
@@ -103,7 +103,7 @@ const dummyData = [
     tagList: ["nostrum", "quia", "quaerat", "numquam"],
     createdAt: "2022-12-09",
     updatedAt: "2022-12-09",
-    favorited: false,
+    isFeatured: false,
     favoritesCount: 200,
     author: {
       username: "Anah Benešová",
@@ -122,7 +122,7 @@ const dummyData = [
     tagList: ["possimus", "maiores", "facilis"],
     createdAt: "2022-12-09",
     updatedAt: "2022-12-09",
-    favorited: false,
+    isFeatured: false,
     favoritesCount: 178,
     author: {
       username: "Anah Benešová",
@@ -140,7 +140,7 @@ const dummyData = [
     tagList: ["necessitatibus", "vitae", "repellat", "labore"],
     createdAt: "2022-12-09",
     updatedAt: "2022-12-09",
-    favorited: false,
+    isFeatured: true,
     favoritesCount: 165,
     author: {
       username: "Anah Benešová",
@@ -159,7 +159,7 @@ const dummyData = [
     tagList: ["dicta", "repellat", "facilis", "labore"],
     createdAt: "2022-12-09",
     updatedAt: "2022-12-09",
-    favorited: false,
+    isFeatured: false,
     favoritesCount: 164,
     author: {
       username: "Anah Benešová",
@@ -178,7 +178,7 @@ const dummyData = [
     tagList: ["consequatur", "esse", "consectetur", "sunt"],
     createdAt: "2022-12-09",
     updatedAt: "2022-12-09",
-    favorited: false,
+    isFeatured: true,
     favoritesCount: 43,
     author: {
       username: "Anah Benešová",
@@ -189,4 +189,14 @@ const dummyData = [
   },
 ];
 
-export default dummyData;
+export  function getAllPosts(){
+  return posts
+}
+
+export  function getFeaturedPosts(){
+  return posts.filter(post => post.isFeatured)
+}
+
+export  function getPostBySlug(slug){
+  return posts.find(post => post.slug === slug)
+}

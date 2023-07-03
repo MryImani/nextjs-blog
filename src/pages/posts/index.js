@@ -1,6 +1,7 @@
-import dummyData from "../../../store/dummy-data"
+
 import AllPost from "@/components/posts/all-posts";
+import { getAllPosts } from "../../../store/dummy-data";
 export default function AllPosts(){
-    const data = dummyData;
-    return <AllPost posts={data} />;
+    const posts = getAllPosts();
+    return <AllPost posts={posts} />;
 }
