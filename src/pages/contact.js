@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 export default function Contact() {
+  const [error,setError] = useState(null);
+  const [message, setMessage] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,9 +18,38 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (event) => {
+  function handleSubmit(event){
     event.preventDefault();
-    console.log(formData);
+    fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if( data.status === 422)
+          {
+            setError(data.message);
+          }
+        else if(data.status === 201) 
+           {
+            setError(null);
+            setMessage(data.message); 
+           }
+        setTimeout(() => {
+          setError(null);
+          setMessage(null);
+          setFormData({
+            name : '',
+            email : '',
+            message : ''
+          }) 
+        },2000)   
+        console.log(data);
+      })
+      .catch((error) => setError(error.message));
   }
   return (
     <section className="px-4 mt-8 lg:px-36 lg:py-8 md:w-2/3  md:mx-auto ">
@@ -63,6 +94,11 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
             ></textarea>
+          </div>
+          <div className="md:col-span-2 text-center">
+            {error ? 
+              <p className="font-bold text-lg text-red-400 ">{error}</p> : <p className="font-bold text-lg text-green-500 ">{message}</p> 
+            }
           </div>
           <div className="form-action md:col-span-2 text-center">
             <button className="bg-black text-slate-400 font-semibold rounded-xl  cursor-pointer px-4 py-3 hover:bg-slate-900 hover:text-slate-100">
