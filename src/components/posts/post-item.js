@@ -11,7 +11,7 @@ export default function PostItem(props) {
   const imagePath = `/images/posts/${post.slug}.jpg`;
   const linkPath = `/posts/${post.slug}`;
   return (
-    <li className="text-center rounded-lg shadow-xl py-3 px-3 flex flex-col justify-between bg-white">
+    <li className="text-center rounded-lg shadow-xl py-3 px-3 flex flex-col justify-between bg-white hover:scale-105">
       <Link href={linkPath}>
 
           <div>

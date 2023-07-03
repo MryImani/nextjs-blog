@@ -19,7 +19,7 @@ function Subscribe() {
             aria-label="Your email"
             ref={emailInputRef}
           />
-          <button className=" bg-black text-slate-400 font-semibold rounded-xl rounded-tl-none rounded-bl-none cursor-pointer px-2">
+          <button className=" bg-black text-slate-400 font-semibold rounded-xl rounded-tl-none rounded-bl-none cursor-pointer px-2  hover:bg-slate-900 hover:text-slate-100">
             subscribe
           </button>
         </div>
